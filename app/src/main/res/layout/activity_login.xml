@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/colorPrimary"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/tv_app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/icon"
+            android:textSize="51sp"/>
+
+        <EditText
+            android:id="@+id/tv_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_app_name"
+            android:layout_marginTop="50dp"
+            android:inputType="textWebEmailAddress"
+            android:hint="@string/hint_insert_email"
+            android:textColor="@color/colorRed"
+            android:textColorHint="@color/colorWhite"
+            android:backgroundTint="@color/colorWhite"/>
+
+        <EditText
+            android:id="@+id/tv_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_username"
+            android:layout_marginTop="16dp"
+            android:inputType="textPassword"
+            android:hint="@string/hint_insert_password"
+            android:textColor="@color/colorRed"
+            android:textColorHint="@color/colorWhite"
+            android:backgroundTint="@color/colorWhite"/>
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_password"
+            android:layout_marginTop="6dp"
+            android:gravity="end"
+            android:textColor="@color/colorRed"/>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_info"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:layout_marginTop="-30dp"
+            android:layout_marginEnd="143dp"
+            android:text="@string/login" />
+    </RelativeLayout>
+</ScrollView>
