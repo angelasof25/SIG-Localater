@@ -9,15 +9,15 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/tv_app_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
-            android:src="@drawable/icon"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/ic_launcher"
             android:textSize="51sp"/>
 
         <EditText
@@ -25,12 +25,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_app_name"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:inputType="textWebEmailAddress"
             android:hint="@string/hint_insert_email"
-            android:textColor="@color/colorRed"
-            android:textColorHint="@color/colorWhite"
-            android:backgroundTint="@color/colorWhite"/>
+            android:textColor="@color/blue"
+            android:textColorHint="@color/white"
+            android:backgroundTint="@color/white"/>
 
         <EditText
             android:id="@+id/tv_password"
@@ -40,9 +40,9 @@
             android:layout_marginTop="16dp"
             android:inputType="textPassword"
             android:hint="@string/hint_insert_password"
-            android:textColor="@color/colorRed"
-            android:textColorHint="@color/colorWhite"
-            android:backgroundTint="@color/colorWhite"/>
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:backgroundTint="@color/white"/>
 
         <TextView
             android:id="@+id/tv_info"
@@ -51,17 +51,16 @@
             android:layout_below="@id/tv_password"
             android:layout_marginTop="6dp"
             android:gravity="end"
-            android:textColor="@color/colorRed"/>
+            android:textColor="@color/blue" />
 
         <Button
             android:id="@+id/btn_login"
+            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_info"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="end"
-            android:layout_marginTop="-30dp"
-            android:layout_marginEnd="143dp"
-            android:text="@string/login" />
+            android:layout_marginTop="-10dp"
+            android:text="@string/login"
+            android:textColor="@color/blue" />
     </RelativeLayout>
 </ScrollView>

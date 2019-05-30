@@ -21,5 +21,15 @@ public class AfterloginActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        findViewById(R.id.botao2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AfterloginActivity.this,
+                        mapa2.class );
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }

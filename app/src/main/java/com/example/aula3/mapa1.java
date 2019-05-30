@@ -1,6 +1,9 @@
 package com.example.aula3;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationManager;
@@ -9,10 +12,12 @@ import android.os.StrictMode;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 
 import org.apache.commons.net.ftp.FTPClient;
 import org.mapsforge.map.android.layers.MyLocationOverlay;
 import org.osmdroid.api.IMapController;
+import org.osmdroid.api.IMapView;
 import org.osmdroid.bonuspack.routing.MapQuestRoadManager;
 import org.osmdroid.bonuspack.routing.OSRMRoadManager;
 import org.osmdroid.bonuspack.routing.Road;
@@ -23,7 +28,9 @@ import org.osmdroid.gpkg.tiles.feature.GeopackageFeatureTilesOverlay;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.ItemizedOverlay;
 import org.osmdroid.views.overlay.Marker;
+import org.osmdroid.views.overlay.OverlayItem;
 import org.osmdroid.views.overlay.Polyline;
 import org.osmdroid.views.overlay.compass.CompassOverlay;
 import org.osmdroid.views.overlay.compass.InternalCompassOrientationProvider;
@@ -94,17 +101,17 @@ public class mapa1 extends AppCompatActivity {
 
 
         IMapController mapController = map.getController();
-        mapController.setZoom(18.5);
+        mapController.setZoom(20.5);
         mapController.setCenter(loc);
 
         /*----------------- FTP apache commons ------------------------
          */
 
-        /* comentar para teste *
+        // comentar para teste *
         FTPClient ftp = new FTPClient();
 
         try {
-            ftp.connect("192.168.1.4",21);
+            ftp.connect("192.168.43.52",21);
             Log.e("connect",ftp.getReplyString()+ "connect ?");
 
             ftp.login("pi","raspberry");
@@ -123,7 +130,7 @@ public class mapa1 extends AppCompatActivity {
 
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
 
 
 
@@ -138,12 +145,12 @@ public class mapa1 extends AppCompatActivity {
         ArrayList<GeoPoint> waypoints = new ArrayList<GeoPoint>();
 
         waypoints.add(loc);
-        GeoPoint endPoint = new GeoPoint(41.18447, -8.63047);
-        waypoints.add(endPoint);
+        GeoPoint endPoint = new GeoPoint(41.55973, -8.40093);
+        waypoints.add(carro_loc);
 
         Marker carro = new Marker(map);
         Drawable carroicon = getResources().getDrawable(R.drawable.carmarker);
-        carro.setPosition(endPoint);
+        carro.setPosition(carro_loc);
         carro.setIcon(carroicon);
         carro.setTitle("Está aqui o Carro!");
         map.getOverlays().add(carro);
@@ -151,6 +158,10 @@ public class mapa1 extends AppCompatActivity {
 
         Road road = roadManager.getRoad(waypoints);
         Polyline roadOverlay = RoadManager.buildRoadOverlay(road);
+
+        int green = Color.parseColor("#0d9e8f");
+        roadOverlay.setColor(green);
+        roadOverlay.setWidth(13);
 
         map.getOverlays().add(roadOverlay);
 
@@ -180,9 +191,28 @@ public class mapa1 extends AppCompatActivity {
             }
 
         }
+        findViewById(R.id.refresh).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onRestart();
+            }
+        });
+
+
 
 
     }
+    @Override
+    protected void onRestart() {
+
+        // TODO Auto-generated method stub
+        super.onRestart();
+        Intent i = new Intent(mapa1.this, mapa1.class);  //your class
+        startActivity(i);
+        finish();
+
+    }
+
     public void onResume(){
         super.onResume();
         //this will refresh the osmdroid configuration on resuming.

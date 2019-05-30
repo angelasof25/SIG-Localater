@@ -4,32 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/backgorund"
     tools:context=".MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:text="@string/lets"
-            android:textSize="50sp"
-            android:background="@color/colorLightGrey"
-            android:textAlignment="center"
+            android:layout_marginTop="240dp"
             android:layout_centerHorizontal="true"
-            android:padding="20dp"/>
+            android:text="Localizar Carro"
+            android:textSize="30sp"
+            android:textColor="@color/blue"
+            android:id="@+id/botao1"
+            android:padding="21dp"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="400dp"
+            android:layout_marginTop="380dp"
             android:layout_centerHorizontal="true"
-            android:text="Localizar"
-            android:textSize="40sp"
-            android:id="@+id/botao1"/>
+            android:text="Localizar Me"
+            android:textSize="30sp"
+            android:textColor="@color/blue"
+            android:id="@+id/botao2"
+            android:padding="20dp"
+            android:paddingEnd="45dp"
+            android:paddingStart="45dp"/>
 
     </RelativeLayout>
 

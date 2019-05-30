@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 
 android {
-
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.aula3"
@@ -23,8 +22,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:2.0.0-beta1'
-    testImplementation 'junit:junit:4.13-beta-3'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'org.osmdroid:osmdroid-android:6.1.0'
@@ -32,10 +31,10 @@ dependencies {
     implementation 'org.osmdroid:osmdroid-mapsforge:6.1.0'
     implementation 'org.osmdroid:osmdroid-geopackage:6.1.0'
     implementation 'com.github.MKergall:osmbonuspack:6.6.0'
-    implementation 'commons-net:commons-net:20030805.205232'
-    implementation 'org.mapsforge:mapsforge-map-android:0.11.0'
-    implementation 'org.mapsforge:mapsforge-map:0.11.0'
-    implementation 'org.mapsforge:mapsforge-themes:0.11.0'
+    implementation 'commons-net:commons-net:3.6'
+    implementation 'org.mapsforge:mapsforge-map-android:0.10.0'
+    implementation 'org.mapsforge:mapsforge-map:0.10.0'
+    implementation 'org.mapsforge:mapsforge-themes:0.10.0'
     //implementation 'com.squareup.okhttp:okhttp:2.7.0'
     //implementation 'org.osmdroid:osmdroid-third-party:6.1.0'
 }
